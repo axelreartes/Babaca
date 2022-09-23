@@ -12,7 +12,7 @@ body {
     font-weight: 300;
 }
 
-header {
+.header1 {
     position: fixed;
     width: 100%;
     z-index: 2;
@@ -36,21 +36,29 @@ header {
     margin-right: 5%;
 }
 
+.offcanvas-header {
+    justify-content: flex-end;
+}
+
+.offcanvas-body {
+    font-size: x-large;
+    font-weight: 400;
+}
+
 .offcanvas-end {
-    width: 70%;
+    width: 250px;
 }
 
 .lista-nav {
     list-style-type: none;
     text-decoration: none;
-}
-
-.lista-txt {
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .prueba {
     text-decoration: none;
+    color: black;
 }
 
 .portada-car {
@@ -96,48 +104,50 @@ h2 {
     position: relative;
 }
 
-.pruebafotos .ejemplo {
-    position: absolute;
-    right: 7%;
-    bottom: 3%;
+.box-ver {
     background-color: white;
-}
-
-.pruebafotos:hover {
-    transform: scale(1.02);
-    cursor: pointer;
 }
 
 .cadapaso {
     width: 100%;
 }
 
-.ejemplo, .ejemplo1 {
+.contenedor-botones {
+    display: flex;
+    position: absolute;
+    bottom: 2%;
+    right: 5%;
+    gap: 10px;
+}
+
+.box-ver {
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 20px;
     font-weight: 400;
 }
 
-.pruebafotos .ejemplo1 {
-    position: absolute;
-    left: 7%;
-    bottom: 3%;
-    background-color: white;
-}
 
-
-.ejemplo:link, .ejemplo:visited, .ejemplo:hover, .ejemplo:active, .ejemplo1:link, .ejemplo1:visited, .ejemplo1:hover, .ejemplo1:active {
+.box-ver:link, .box-ver:visited, .box-ver:hover, .box-ver:active, .box-comprar:link, .box-comprar:visited, .box-comprar:hover, .box-comprar:active {
     color: black;
 }
 
+.box-comprar {
+    background-color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 400;
+
+
+}
 
 footer {
     background-color: black;
 }
 
 @media (min-width:770px){
-    .nav-bar {
+    .header1 {
         display: none;
     }
 }
