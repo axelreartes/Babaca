@@ -1,0 +1,81 @@
+[
+    {
+        "id": 1,
+        "nombre": "Stroken Blancas",
+        "precio": 4500,
+        "img": "../img/stBlancas.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 2,
+        "nombre": "Stroken Beiges",
+        "precio": 4500,
+        "img": "../img/stBeiges.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 3,
+        "nombre": "Stroken Rojas",
+        "precio": 4500,
+        "img": "../img/stRojas.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 4,
+        "nombre": "Urban Twinfeeler",
+        "precio": 5500,
+        "img": "../img/urbanTwinfeeler.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 5,
+        "nombre": "Urban Joa",
+        "precio": 5500,
+        "img": "../img/urbanJoa.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 6,
+        "nombre": "Urban SID",
+        "precio": 5500,
+        "img": "../img/urbanSid.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 7,
+        "nombre": "Urban AX",
+        "precio": 5500,
+        "img": "../img/urbanAx.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 8,
+        "nombre": "Pantuflas Negras",
+        "precio": 1600,
+        "img": "../img/pantuflaNegra.png",
+        "cantidad": 1
+    },
+
+    {
+        "id": 9,
+        "nombre": "Pantuflas natural",
+        "precio": 1600,
+        "img": "../img/pantuflaNatural.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 10,
+        "nombre": "Pantuflas Rosas",
+        "precio": 1600,
+        "img": "../img/pantuflaRosa.jpg",
+        "cantidad": 1
+    }
+]
