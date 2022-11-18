@@ -3,7 +3,7 @@ const contenedorProductos = document.getElementById("contenedorProductos");
 
 const listadoProductos = "../json/productos.json";
 
-const Productos = [];
+let Productos = [];
 
 fetch(listadoProductos)
     .then((respuesta) => respuesta.json())
@@ -149,16 +149,8 @@ const eliminarTodoElCarrito = () => {
 
 //Funcion para eliminar producto del carrito
 
-const eliminarDelCarrito = (id) => {
-    const producto = carrito.find((producto) => producto.id === id);
-    const indice = carrito.indexOf (producto);
-    if (producto.cantidad === 1){
-        carrito.splice(carrito.indexOf(producto), 1);
-    }else {
-        carrito[indice].cantidad = carrito[indice].cantidad - 1; 
-    }
-    actualizarCarrito();
-}
+
+
 
 
 // Funcion agregar al carrito
@@ -185,10 +177,23 @@ const mostrarCarrito = () => {
         contenedorCarrito.appendChild(card);
 
         //Eliminar productos del carrito:
-        const boton = document.getElementById(`eliminar${producto.id}`);
-        boton.addEventListener("click", () => {
+        const btn = document.getElementById(`eliminar${producto.id}`);
+        btn.addEventListener("click", () => {
             eliminarDelCarrito(producto.id);
+            producto.cantidad = 0
+           calcularTotal();
         })
+
+        const eliminarDelCarrito = (id) => {
+            const producto = carrito.find((producto) => producto.id === id);
+            const indice = carrito.indexOf (producto);
+            if (producto.cantidad === 1){
+                carrito.splice(carrito.indexOf(producto), 1);
+            }else {
+                carrito[indice].cantidad = carrito[indice].cantidad - 1; 
+            }
+            actualizarCarrito();
+        }
 
     })
 
