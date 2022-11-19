@@ -19,6 +19,7 @@ fetch(listadoProductos)
             const card = document.createElement("div");
         card.classList.add("col-xl-3", "col-md-6", "col-xs-12");
         card.innerHTML = `
+            
             <div class="card">
                 <img src="${producto.img}" class="card-img-top imgProductos" alt="${producto.nombre}">
                 <div class="card-body">
@@ -107,7 +108,9 @@ function actualizarCarrito() {
         `;
     });
 
+    contenedorCarrito.classList.add("col-xl-3", "col-md-6", "col-xs-12");
     contenedorCarrito.innerHTML = aux;
+    
     calcularTotal();
 }
 
@@ -147,13 +150,9 @@ const eliminarTodoElCarrito = () => {
     localStorage.clear();
 }
 
-//Funcion para eliminar producto del carrito
 
 
 
-
-
-// Funcion agregar al carrito
 
 
 //Funcion para mostrar el carrito
@@ -164,7 +163,7 @@ const mostrarCarrito = () => {
         const card = document.createElement("div");
         card.classList.add("col-xl-3", "col-md-6", "col-xs-12");
         card.innerHTML = `
-            <div class="card ">
+            <div class="card">
                 <img src="${producto.img}" class="card-img-top imgProductos" alt="${producto.nombre}">
                 <div class="card-body">
                     <h5 class="card-title"> ${producto.nombre} </h5>
@@ -177,8 +176,8 @@ const mostrarCarrito = () => {
         contenedorCarrito.appendChild(card);
 
         //Eliminar productos del carrito:
-        const btn = document.getElementById(`eliminar${producto.id}`);
-        btn.addEventListener("click", () => {
+        const botonEliminar = document.getElementById(`eliminar${producto.id}`);
+        botonEliminar.addEventListener("click", () => {
             eliminarDelCarrito(producto.id);
             producto.cantidad = 0
            calcularTotal();
@@ -199,6 +198,51 @@ const mostrarCarrito = () => {
 
     calcularTotal();
 }
+    
+const finalizarCompra = document.getElementById("finalizarCompra")
+
+finalizarCompra.addEventListener("click", () => {
+    completarCompra();
+})
+
+function completarCompra(){if (carrito.length > 0) {
+    Swal.fire({
+        title: `Estas seguro que deseas finalizar tu compra?`,
+        icon: "warning",
+        background: "white",
+        confirmButtonText: "Aceptar",
+        showCancelButton: true,
+        cancelButtonText: "Cancelar",
+        cancelButtonColor: "black",
+        confirmButtonColor: "red"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: "Compra Finalizada. Gracias por tu compra!",
+                icon: "success",
+                confirmButtonText: "Aceptar",
+                confirmButtonColor: "black"
+            })
+            eliminarTodoElCarrito();
+            calcularTotal();
+            mostrarCarrito();
+        }
+    })
+} else {
+    Toastify({
+        text: "No hay ningun producto en el carrito",
+        duration: 3000,
+        gravity: "bottom",
+        position: "right",
+        style:
+        {
+            background: "black"
+        }
+    }).showToast();
+ }
+
+}
+
 
 
 
